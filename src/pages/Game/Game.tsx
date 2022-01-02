@@ -23,13 +23,15 @@ const Game: FC<{}> = (): JSX.Element => {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const priceUpdateInterval = setInterval(() => {
       if (isGameStarted) {
-        console.log("tick");
+        console.log("price updated");
       }
-    }, 1000);
+    }, 1000 * 10);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(priceUpdateInterval);
+    };
   }, [isGameStarted]);
 
   return (

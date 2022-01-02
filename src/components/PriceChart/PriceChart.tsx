@@ -44,13 +44,14 @@ const PriceChart: FC<{}> = (): JSX.Element => {
     "May",
     "June",
     "July",
+    "July",
   ];
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Dataset 1",
+        label: "Price",
         data: [1, 2, 23, 34, 5, 36, 47, 58],
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",

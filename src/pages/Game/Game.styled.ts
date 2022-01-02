@@ -9,7 +9,7 @@ const GameContainer = styled.div`
   width: 100%;
   height: 100%;
 
-  padding: 25px 10px;
+  padding: 10px;
 
   background: linear-gradient(rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%),
     url(${gamePageBg01});
