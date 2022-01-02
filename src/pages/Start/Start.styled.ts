@@ -38,4 +38,41 @@ const StartText = styled.p`
   text-align: center;
 `;
 
-export { StartContainer, StartTextContainer, StartText };
+const StartButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  margin-top: 50px;
+`;
+
+const StartButton = styled.button`
+  display: block;
+
+  padding: 15px 100px;
+
+  font-size: 24px;
+  font-weight: 400;
+
+  background-color: #fff;
+
+  border-radius: 25px;
+  border: none;
+
+  cursor: pointer;
+
+  transition: 750ms ease;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.5);
+
+    transition: 250ms ease;
+  }
+`;
+
+export {
+  StartContainer,
+  StartTextContainer,
+  StartText,
+  StartButtonContainer,
+  StartButton,
+};

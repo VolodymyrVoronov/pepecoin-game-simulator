@@ -1,9 +1,17 @@
-import React from "react";
+import React, { FC } from "react";
 import { motion } from "framer-motion";
 
-import { StartContainer, StartTextContainer, StartText } from "./Start.styled";
+import {
+  StartContainer,
+  StartTextContainer,
+  StartText,
+  StartButtonContainer,
+  StartButton,
+} from "./Start.styled";
 
-const Start = () => {
+const Start: FC<{}> = (): JSX.Element => {
+  const onStartGameButtonClick = (): void => {};
+
   return (
     <StartContainer>
       <motion.div
@@ -46,6 +54,22 @@ const Start = () => {
             </StartText>
           </motion.div>
         </StartTextContainer>
+
+        <StartButtonContainer>
+          <motion.div
+            initial={{ x: -150, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ ease: "linear", delay: 2, duration: 2 }}
+          >
+            <StartButton
+              onClick={onStartGameButtonClick}
+              type="button"
+              name="Начать игру"
+            >
+              Начать игру
+            </StartButton>
+          </motion.div>
+        </StartButtonContainer>
       </motion.div>
     </StartContainer>
   );
