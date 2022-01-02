@@ -1,6 +1,20 @@
 import create from "zustand";
 import produce from "immer";
 
-interface IGameStore {}
+interface IGameStore {
+  isGameStarted: boolean;
 
-export const gameStore = create<IGameStore>((set, get) => ({}));
+  setStartGame: () => void;
+}
+
+export const gameStore = create<IGameStore>((set, get) => ({
+  isGameStarted: false,
+
+  setStartGame: () => {
+    set(
+      produce((state) => {
+        state.isGameStarted = true;
+      })
+    );
+  },
+}));

@@ -1,5 +1,10 @@
-import React, { FC } from "react";
+import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+
+import { gameStore } from "store/game";
+
+import Paths from "const/paths";
 
 import {
   StartContainer,
@@ -10,7 +15,14 @@ import {
 } from "./Start.styled";
 
 const Start: FC<{}> = (): JSX.Element => {
-  const onStartGameButtonClick = (): void => {};
+  const navigation = useNavigate();
+
+  const { setStartGame } = gameStore();
+
+  const onStartGameButtonClick = (): void => {
+    setStartGame();
+    navigation(Paths.GamePage, { replace: true });
+  };
 
   return (
     <StartContainer>

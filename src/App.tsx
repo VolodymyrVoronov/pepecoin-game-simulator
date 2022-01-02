@@ -1,9 +1,11 @@
-import { Suspense } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Paths from "const/paths";
 
 import Start from "pages/Start/Start";
+
+const Game = lazy(() => import("pages/Game/Game"));
 
 const App = () => {
   return (
@@ -11,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path={Paths.Root} element={<Navigate to={Paths.StartPage} />} />
         <Route path={Paths.StartPage} element={<Start />} />
-        <Route path={Paths.GamePage} element={<p>Game...</p>} />
+        <Route path={Paths.GamePage} element={<Game />} />
       </Routes>
     </Suspense>
   );
