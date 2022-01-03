@@ -27,7 +27,7 @@ const options = {
 };
 
 const PriceChart: FC<{}> = (): JSX.Element => {
-  const { prices, timeInterval } = gameStore();
+  const { prices, currentPrice, timeInterval } = gameStore();
 
   ChartJS.register(
     CategoryScale,
@@ -55,7 +55,7 @@ const PriceChart: FC<{}> = (): JSX.Element => {
 
   return (
     <PriceChartContainer>
-      <PriceChartTitle>Pepecoin price index</PriceChartTitle>
+      <PriceChartTitle>Pepecoin price: {currentPrice}</PriceChartTitle>
       <Line options={options} data={data} />
     </PriceChartContainer>
   );

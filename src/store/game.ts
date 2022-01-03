@@ -4,6 +4,16 @@ import produce from "immer";
 import { getRandomPrice } from "const/getRandomPrice";
 import { getCurrentTime } from "const/getCurrentTime";
 
+import { graphicCardsData, correctGraphicCard } from "data/graphicCards";
+
+interface IGraphicCard {
+  id: string;
+  name: string;
+  price: number;
+  photo: string;
+  miningCoefficient: number;
+}
+
 interface IGameStore {
   isGameStarted: boolean;
   isMiningStarted: boolean;
@@ -14,6 +24,8 @@ interface IGameStore {
   minRangePice: number;
   maxRangePice: number;
   deposit: number;
+  currentGraphicCard: IGraphicCard;
+  graphicCards: IGraphicCard[];
 
   setStartGame: () => void;
   toggleMining: () => void;
@@ -32,6 +44,8 @@ export const gameStore = create<IGameStore>((set, get) => ({
   minRangePice: 1,
   maxRangePice: 100,
   deposit: 0,
+  currentGraphicCard: correctGraphicCard,
+  graphicCards: graphicCardsData,
 
   setStartGame: () => {
     const startPrice = getRandomPrice(get().minRangePice, get().maxRangePice);

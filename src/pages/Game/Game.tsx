@@ -8,6 +8,7 @@ import Paths from "const/paths";
 
 import PriceChart from "components/PriceChart/PriceChart";
 import Account from "components/Account/Account";
+import GraphicCards from "components/GraphicCards/GraphicCards";
 
 import { GameContainer, GameTopBox, GameBottomBox } from "./Game.styled";
 
@@ -66,9 +67,7 @@ const Game: FC<{}> = (): JSX.Element => {
         transition={{ ease: "linear", duration: 1, delay: 1 }}
       >
         <GameBottomBox>
-          <div style={{ width: "100%", backgroundColor: "tomato" }}>
-            asdasda
-          </div>
+          <GraphicCards />
         </GameBottomBox>
       </motion.div>
     </GameContainer>

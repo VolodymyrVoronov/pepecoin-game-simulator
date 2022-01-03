@@ -1,5 +1,4 @@
 import { FC, memo, useEffect } from "react";
-import { motion } from "framer-motion";
 
 import { gameStore } from "store/game";
 
@@ -16,7 +15,8 @@ import {
 } from "./Account.styled";
 
 const Account: FC<{}> = (): JSX.Element => {
-  const { toggleMining, isMiningStarted, deposit, mining } = gameStore();
+  const { toggleMining, isMiningStarted, deposit, mining, currentGraphicCard } =
+    gameStore();
 
   useEffect(() => {
     const miningInterval = setInterval(() => {
@@ -51,7 +51,7 @@ const Account: FC<{}> = (): JSX.Element => {
         <AccountText fontSize="26px">Pepecoin</AccountText>
         <AccountDivider />
         <AccountText fontSize="36px">Видеокарта:</AccountText>
-        <AccountText fontSize="26px">GeForce GTX 960</AccountText>
+        <AccountText fontSize="26px">{currentGraphicCard.name}</AccountText>
         <AccountButton onClick={onMiningButtonClick} type="button">
           {isMiningStarted ? "Остановить майнинг" : "Начать майнинг"}
         </AccountButton>
