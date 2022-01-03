@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, memo, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { gameStore } from "store/game";
@@ -10,22 +10,29 @@ import {
   AccountLeftSideAnimation,
   AccountLeftSidePauseIcon,
   AccountRightSide,
+  AccountText,
+  AccountButton,
+  AccountDivider,
 } from "./Account.styled";
 
 const Account: FC<{}> = (): JSX.Element => {
-  const { toggleMining, isMiningStarted } = gameStore();
+  const { toggleMining, isMiningStarted, deposit, mining } = gameStore();
 
   useEffect(() => {
     const miningInterval = setInterval(() => {
       if (isMiningStarted) {
-        console.log("mining");
+        mining();
       }
     }, 1000);
 
     return () => {
       clearInterval(miningInterval);
     };
-  }, [isMiningStarted]);
+  }, [isMiningStarted, mining]);
+
+  const onMiningButtonClick = () => {
+    toggleMining();
+  };
 
   return (
     <AccountContainer>
@@ -39,10 +46,18 @@ const Account: FC<{}> = (): JSX.Element => {
       </AccountLeftSide>
 
       <AccountRightSide>
-        <button onClick={toggleMining}>toggle</button>
+        <AccountText>Счёт:</AccountText>
+        <AccountText fontSize="28px">{deposit.toFixed(2)}</AccountText>
+        <AccountText fontSize="26px">Pepecoin</AccountText>
+        <AccountDivider />
+        <AccountText fontSize="36px">Видеокарта:</AccountText>
+        <AccountText fontSize="26px">GeForce GTX 960</AccountText>
+        <AccountButton onClick={onMiningButtonClick} type="button">
+          {isMiningStarted ? "Остановить майнинг" : "Начать майнинг"}
+        </AccountButton>
       </AccountRightSide>
     </AccountContainer>
   );
 };
 
-export default Account;
+export default memo(Account);

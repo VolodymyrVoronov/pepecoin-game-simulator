@@ -6,7 +6,7 @@ const GameContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 100%;
+  min-width: 1440px;
   height: 100%;
 
   padding: 10px;

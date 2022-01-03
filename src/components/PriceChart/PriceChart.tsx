@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { gameStore } from "store/game";
 
 import { PriceChartContainer, PriceChartTitle } from "./PriceChart.styled";
 
@@ -26,6 +27,8 @@ const options = {
 };
 
 const PriceChart: FC<{}> = (): JSX.Element => {
+  const { prices, timeInterval } = gameStore();
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -36,23 +39,14 @@ const PriceChart: FC<{}> = (): JSX.Element => {
     Legend
   );
 
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "July",
-  ];
+  const labels = timeInterval;
 
   const data = {
     labels,
     datasets: [
       {
         label: "Price",
-        data: [1, 2, 23, 34, 5, 36, 47, 58],
+        data: prices,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },

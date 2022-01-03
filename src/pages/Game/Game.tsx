@@ -14,7 +14,8 @@ import { GameContainer, GameTopBox, GameBottomBox } from "./Game.styled";
 const Game: FC<{}> = (): JSX.Element => {
   const navigation = useNavigate();
 
-  const { isGameStarted } = gameStore();
+  const { isGameStarted, setRandomPrices, updateMinMaxRangePrices } =
+    gameStore();
 
   useEffect(() => {
     if (!isGameStarted) {
@@ -25,14 +26,26 @@ const Game: FC<{}> = (): JSX.Element => {
   useEffect(() => {
     const priceUpdateInterval = setInterval(() => {
       if (isGameStarted) {
-        console.log("price updated");
+        setRandomPrices();
       }
     }, 1000 * 10);
 
     return () => {
       clearInterval(priceUpdateInterval);
     };
-  }, [isGameStarted]);
+  }, [isGameStarted, setRandomPrices]);
+
+  useEffect(() => {
+    const rangePriceUpdateInterval = setInterval(() => {
+      if (isGameStarted) {
+        updateMinMaxRangePrices();
+      }
+    }, 1000 * 30);
+
+    return () => {
+      clearInterval(rangePriceUpdateInterval);
+    };
+  }, [isGameStarted, updateMinMaxRangePrices]);
 
   return (
     <GameContainer>
