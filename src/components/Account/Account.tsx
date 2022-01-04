@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from "react";
+import { FC, Fragment, useEffect } from "react";
 
 import { gameStore } from "store/game";
 
@@ -51,13 +51,24 @@ const Account: FC<{}> = (): JSX.Element => {
         <AccountText fontSize="26px">Pepecoin</AccountText>
         <AccountDivider />
         <AccountText fontSize="36px">Видеокарта:</AccountText>
-        <AccountText fontSize="26px">{currentGraphicCard.name}</AccountText>
-        <AccountButton onClick={onMiningButtonClick} type="button">
-          {isMiningStarted ? "Остановить майнинг" : "Начать майнинг"}
-        </AccountButton>
+
+        {currentGraphicCard ? (
+          <Fragment>
+            <AccountText fontSize="26px">
+              {currentGraphicCard?.name}
+            </AccountText>
+            <AccountButton onClick={onMiningButtonClick} type="button">
+              {isMiningStarted ? "Остановить майнинг" : "Начать майнинг"}
+            </AccountButton>
+          </Fragment>
+        ) : (
+          <AccountText fontSize="18px">
+            Для начала майнинга надо купить видеокарту.
+          </AccountText>
+        )}
       </AccountRightSide>
     </AccountContainer>
   );
 };
 
-export default memo(Account);
+export default Account;

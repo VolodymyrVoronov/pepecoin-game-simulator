@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-const GraphicCardsContainer = styled.div`
+const GraphicCardsContainer = styled.section`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   width: 100%;
 
-  padding: 15px;
+  padding: 25px;
 
   background-color: #ffffff;
 

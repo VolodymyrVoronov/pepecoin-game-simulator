@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import pcIcon01 from "assets/pc-icon-01.svg";
 import pauseIcon01 from "assets/pause-icon-01.svg";
@@ -96,6 +96,7 @@ const AccountText = styled.span<IAccountTextProps>`
 
   font-size: ${(props) => (props.fontSize ? props.fontSize : "48px")};
   font-weight: 600;
+  text-align: center;
 `;
 
 const AccountButton = styled.button`

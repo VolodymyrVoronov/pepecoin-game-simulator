@@ -4,7 +4,7 @@ import produce from "immer";
 import { getRandomPrice } from "const/getRandomPrice";
 import { getCurrentTime } from "const/getCurrentTime";
 
-import { graphicCardsData, correctGraphicCard } from "data/graphicCards";
+import { graphicCardsData } from "data/graphicCards";
 
 interface IGraphicCard {
   id: string;
@@ -12,6 +12,7 @@ interface IGraphicCard {
   price: number;
   photo: string;
   miningCoefficient: number;
+  purchased: boolean;
 }
 
 interface IGameStore {
@@ -24,7 +25,7 @@ interface IGameStore {
   minRangePice: number;
   maxRangePice: number;
   deposit: number;
-  currentGraphicCard: IGraphicCard;
+  currentGraphicCard: IGraphicCard | null;
   graphicCards: IGraphicCard[];
 
   setStartGame: () => void;
@@ -32,19 +33,21 @@ interface IGameStore {
   setRandomPrices: () => void;
   updateMinMaxRangePrices: () => void;
   mining: () => void;
+  buyGraphicCard: (graphicCard: string) => void;
+  cutTheChartPrices: () => void;
 }
 
 export const gameStore = create<IGameStore>((set, get) => ({
   isGameStarted: false,
   isMiningStarted: false,
-  miningCoefficient: 0.0005,
+  miningCoefficient: 0,
   prices: [],
   currentPrice: 0,
   timeInterval: [],
   minRangePice: 1,
   maxRangePice: 100,
-  deposit: 0,
-  currentGraphicCard: correctGraphicCard,
+  deposit: 5000,
+  currentGraphicCard: null,
   graphicCards: graphicCardsData,
 
   setStartGame: () => {
@@ -57,6 +60,17 @@ export const gameStore = create<IGameStore>((set, get) => ({
         state.currentPrice = startPrice;
         state.prices.push(startPrice);
         state.timeInterval.push(newTimeInterval);
+      })
+    );
+  },
+
+  cutTheChartPrices: () => {
+    set(
+      produce((state) => {
+        if (state.prices.length > 200 || state.timeInterval.length > 200) {
+          state.prices = state.prices.slice(100);
+          state.timeInterval = state.timeInterval.slice(100);
+        }
       })
     );
   },
@@ -97,5 +111,30 @@ export const gameStore = create<IGameStore>((set, get) => ({
         state.maxRangePice = getRandomPrice(10000, 100000);
       })
     );
+  },
+
+  buyGraphicCard: (graphicCardId: string) => {
+    const graphicCard = get().graphicCards.find(
+      (graphicCard) => graphicCard.id === graphicCardId
+    );
+
+    if (graphicCard) {
+      set(
+        produce((state) => {
+          state.currentGraphicCard = graphicCard;
+          state.deposit -= graphicCard.price;
+          state.miningCoefficient = graphicCard.miningCoefficient;
+          state.graphicCards = state.graphicCards.map(
+            (graphicCard: { id: string; purchased: boolean }) => {
+              if (graphicCard.id === graphicCardId) {
+                graphicCard.purchased = true;
+              }
+
+              return graphicCard;
+            }
+          );
+        })
+      );
+    }
   },
 }));

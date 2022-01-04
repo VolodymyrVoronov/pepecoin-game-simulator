@@ -15,8 +15,12 @@ import { GameContainer, GameTopBox, GameBottomBox } from "./Game.styled";
 const Game: FC<{}> = (): JSX.Element => {
   const navigation = useNavigate();
 
-  const { isGameStarted, setRandomPrices, updateMinMaxRangePrices } =
-    gameStore();
+  const {
+    isGameStarted,
+    setRandomPrices,
+    updateMinMaxRangePrices,
+    cutTheChartPrices,
+  } = gameStore();
 
   useEffect(() => {
     if (!isGameStarted) {
@@ -28,13 +32,14 @@ const Game: FC<{}> = (): JSX.Element => {
     const priceUpdateInterval = setInterval(() => {
       if (isGameStarted) {
         setRandomPrices();
+        cutTheChartPrices();
       }
     }, 1000 * 10);
 
     return () => {
       clearInterval(priceUpdateInterval);
     };
-  }, [isGameStarted, setRandomPrices]);
+  }, [cutTheChartPrices, isGameStarted, setRandomPrices]);
 
   useEffect(() => {
     const rangePriceUpdateInterval = setInterval(() => {
