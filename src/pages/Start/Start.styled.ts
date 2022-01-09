@@ -7,7 +7,7 @@ const StartContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  min-width: 1440px;
   height: 100%;
 
   background-image: url(${startPageBg01});

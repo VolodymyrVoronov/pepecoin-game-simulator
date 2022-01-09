@@ -1,8 +1,8 @@
 import create from "zustand";
 import produce from "immer";
 
-import { getRandomPrice } from "const/getRandomPrice";
-import { getCurrentTime } from "const/getCurrentTime";
+import { getRandomPrice } from "helpers/getRandomPrice";
+import { getCurrentTime } from "helpers/getCurrentTime";
 
 import { graphicCardsData } from "data/graphicCards";
 
