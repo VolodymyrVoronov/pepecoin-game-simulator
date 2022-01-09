@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/pepecoin-game-simulator/static/css/main.1aae15c2.css",
+    "main.js": "/pepecoin-game-simulator/static/js/main.8ed7c47a.js",
+    "static/js/949.5bb4adbb.chunk.js": "/pepecoin-game-simulator/static/js/949.5bb4adbb.chunk.js",
+    "static/js/67.da1c9665.chunk.js": "/pepecoin-game-simulator/static/js/67.da1c9665.chunk.js",
+    "static/media/mining-animation-01.gif": "/pepecoin-game-simulator/static/media/mining-animation-01.d12134af1b1334600669.gif",
+    "static/media/geForce1060-01.jpg": "/pepecoin-game-simulator/static/media/geForce1060-01.81f4a4f27d76bf8abf32.jpg",
+    "static/media/global-bg-01.jpg": "/pepecoin-game-simulator/static/media/global-bg-01.e437d6b0a561e5fd3f59.jpg",
+    "static/media/geForce2060-01.jpg": "/pepecoin-game-simulator/static/media/geForce2060-01.7bcb15df94177f0dc30c.jpg",
+    "static/media/geForce960-01.png": "/pepecoin-game-simulator/static/media/geForce960-01.ce3d522ee52c56b87823.png",
+    "static/media/geForce3060-01.jpg": "/pepecoin-game-simulator/static/media/geForce3060-01.8818461996f91c337d41.jpg",
+    "static/media/geForce3090-01.jpg": "/pepecoin-game-simulator/static/media/geForce3090-01.cb2e3a3827da49529939.jpg",
+    "index.html": "/pepecoin-game-simulator/index.html",
+    "static/media/pause-icon-01.svg": "/pepecoin-game-simulator/static/media/pause-icon-01.8be4b37e98a78b5f105a0e44d12eb2b8.svg",
+    "static/media/pc-icon-01.svg": "/pepecoin-game-simulator/static/media/pc-icon-01.76851112bcceea8c0d0661c90f810f25.svg",
+    "main.1aae15c2.css.map": "/pepecoin-game-simulator/static/css/main.1aae15c2.css.map",
+    "main.8ed7c47a.js.map": "/pepecoin-game-simulator/static/js/main.8ed7c47a.js.map",
+    "949.5bb4adbb.chunk.js.map": "/pepecoin-game-simulator/static/js/949.5bb4adbb.chunk.js.map",
+    "67.da1c9665.chunk.js.map": "/pepecoin-game-simulator/static/js/67.da1c9665.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1aae15c2.css",
+    "static/js/main.8ed7c47a.js"
+  ]
+}
