@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pepecoin-game-simulator/static/css/main.1aae15c2.css",
-    "main.js": "/pepecoin-game-simulator/static/js/main.8ed7c47a.js",
-    "static/js/949.5bb4adbb.chunk.js": "/pepecoin-game-simulator/static/js/949.5bb4adbb.chunk.js",
+    "main.js": "/pepecoin-game-simulator/static/js/main.73222126.js",
+    "static/js/949.0b508fb0.chunk.js": "/pepecoin-game-simulator/static/js/949.0b508fb0.chunk.js",
     "static/js/67.da1c9665.chunk.js": "/pepecoin-game-simulator/static/js/67.da1c9665.chunk.js",
     "static/media/mining-animation-01.gif": "/pepecoin-game-simulator/static/media/mining-animation-01.d12134af1b1334600669.gif",
     "static/media/geForce1060-01.jpg": "/pepecoin-game-simulator/static/media/geForce1060-01.81f4a4f27d76bf8abf32.jpg",
@@ -15,12 +15,12 @@
     "static/media/pause-icon-01.svg": "/pepecoin-game-simulator/static/media/pause-icon-01.8be4b37e98a78b5f105a0e44d12eb2b8.svg",
     "static/media/pc-icon-01.svg": "/pepecoin-game-simulator/static/media/pc-icon-01.76851112bcceea8c0d0661c90f810f25.svg",
     "main.1aae15c2.css.map": "/pepecoin-game-simulator/static/css/main.1aae15c2.css.map",
-    "main.8ed7c47a.js.map": "/pepecoin-game-simulator/static/js/main.8ed7c47a.js.map",
-    "949.5bb4adbb.chunk.js.map": "/pepecoin-game-simulator/static/js/949.5bb4adbb.chunk.js.map",
+    "main.73222126.js.map": "/pepecoin-game-simulator/static/js/main.73222126.js.map",
+    "949.0b508fb0.chunk.js.map": "/pepecoin-game-simulator/static/js/949.0b508fb0.chunk.js.map",
     "67.da1c9665.chunk.js.map": "/pepecoin-game-simulator/static/js/67.da1c9665.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1aae15c2.css",
-    "static/js/main.8ed7c47a.js"
+    "static/js/main.73222126.js"
   ]
 }
