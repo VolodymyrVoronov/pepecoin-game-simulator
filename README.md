@@ -1,6 +1,6 @@
 ###### Pepecoin Game Simulator
 
-Online preview: [Pepecoin Game Simulator]( "Pepecoin Game Simulator")
+Online preview: [Pepecoin Game Simulator](https://volodymyrvoronov.github.io/pepecoin-game-simulator/ "Pepecoin Game Simulator")
 
 To install the project on your pc/laptop just clone this repository and take following steps:
 
